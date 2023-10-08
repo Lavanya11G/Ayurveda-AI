@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Chatbot from './pages/Chatbot/Chatbot'
-import NavigationBar from './lib/NAvigationBar/NavigationBar'
+import NavigationBar from './lib/NavigationBar/NavigationBar'
 import { Routes, Route } from 'react-router'
 import Home from './pages/Home/Home'
 
