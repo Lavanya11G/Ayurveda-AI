@@ -1,4 +1,6 @@
+// require('dotenv').config();
 import React, { useState } from "react";
+
 import "./Chatbot.css";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
@@ -10,7 +12,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 import Card from "../../lib/Card/Card";
-const API_KEY = "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";
+const API_KEY = import.meta.env.VITE_API_LINK ;
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -25,9 +27,9 @@ const Chatbot = () => {
   const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
+      message: "Hello, I'm VED! Ask me anything!",
       sentTime: currentTime,
-      sender: "ChatGPT",
+      sender: "VED",
     },
   ]);
 
@@ -45,8 +47,7 @@ const Chatbot = () => {
 
     setMessages(newMessages);
 
-    // Initial system message to determine ChatGPT functionality
-    // How it responds, how it talks, etc.
+
     setIsTyping(true);
     await processMessageToChatGPT(newMessages);
   };
